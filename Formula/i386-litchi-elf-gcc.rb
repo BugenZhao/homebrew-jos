@@ -10,6 +10,11 @@ class I386LitchiElfGcc < Formula
   depends_on "libmpc"
   depends_on "mpfr"
   depends_on "i386-litchi-elf-binutils"
+  
+  resource "newlib" do
+    url "https://github.com/bminor/newlib/archive/newlib-3.3.0.tar.gz"
+    sha256 "0e3e50ddb1e864dac84b04680fb7e1680a8cfb05ec14d60260729e2ce552561c"
+  end
 
   def install
     binutils = Formulary.factory "i386-litchi-elf-binutils"
@@ -21,11 +26,13 @@ class I386LitchiElfGcc < Formula
       "--disable-nls",
       "--disable-libssp",
       "--disable-libmudflap",
-      "--disable-multilib",
+      "--enable-interwork",
+      "--enable-multilib",
       "--with-as=#{binutils.bin}/i386-litchi-elf-as",
       "--with-ld=#{binutils.bin}/i386-litchi-elf-ld",
-      "--with-newlib",
       "--without-headers",
+      "--with-newlib",
+#       "--disable-hosted-libstdcxx",
       "--target=i386-litchi-elf"
     ]
 
@@ -33,8 +40,25 @@ class I386LitchiElfGcc < Formula
       system "../configure", *args
       system "make", "all-gcc"
       system "make", "install-gcc"
-      system "make", "all-target-libgcc"
-      system "make", "install-target-libgcc"
+      
+      ENV["PATH"] = ENV["PATH"] + ":#{prefix}/bin"
+      ENV["CC"] = "gcc"
+      
+      resource("newlib").stage do
+        system "./configure", "--prefix=#{prefix}",
+                              "--target=i386-litchi-elf",
+                              "--disable-libssp",
+                              "--disable-nls"
+        system "make"
+        system "make", "-j1", "install"
+      end
+      
+#       system "make", "all-target-libgcc"
+#       system "make", "install-target-libgcc"
+#       system "make", "all-target-libstdc++-v3"
+#       system "make", "install-target-libstdc++-v3"
+      system "make", "all"
+      system "make", "install"
     end
 
     # info and man7 files conflict with native gcc
