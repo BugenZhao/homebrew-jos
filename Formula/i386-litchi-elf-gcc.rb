@@ -7,7 +7,7 @@ class I386LitchiElfGcc < Formula
   sha256 "b6898a23844b656f1b68691c5c012036c2e694ac4b53a8918d4712ad876e7ea2"
 
   bottle do
-    root_url "https://bintray.com/bugenzhao/bottles-litchi"
+    root_url "https://dl.bintray.com/bugenzhao/bottles-litchi"
     sha256 "2ab5e839704eb6b811232852e28834baa4cb3e9b43c1423c78d22c6b392be4c1" => :catalina
   end
 

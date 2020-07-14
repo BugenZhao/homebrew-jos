@@ -21,7 +21,7 @@ $ brew install i386-litchi-elf-binutils i386-litchi-elf-gcc i386-litchi-elf-gdb
 - Create several packages under it, named the same as the formulae, e.g. "i386-litchi-elf-gcc"
 - Build bottles.
   ```bash
-  brew test-bot --root-url="https://bintray.com/bugenzhao/bottles-litchi" --bintray-org=bugenzhao --tap=bugenzhao/litchi i386-litchi-elf-gcc i386-litchi-elf-gdb i386-litchi-elf-binutils
+  brew test-bot --root-url="https://dl.bintray.com/bugenzhao/bottles-litchi" --bintray-org=bugenzhao --tap=bugenzhao/litchi i386-litchi-elf-gcc i386-litchi-elf-gdb i386-litchi-elf-binutils
   ```
 - Upload to Bintray.
   ```bash
