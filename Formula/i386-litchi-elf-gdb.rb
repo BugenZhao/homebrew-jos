@@ -6,6 +6,11 @@ class I386LitchiElfGdb < Formula
   mirror "https://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz"
   sha256 "1e55b4d7cdca7b34be12f4ceae651623aa73b2fd640152313f9f66a7149757c4"
 
+  bottle do
+    root_url "https://bintray.com/bugenzhao/bottles-litchi"
+    sha256 "256ccbfebcc065c8c4e8742b626d6e27c2bca781ecf5b085067659d69526a263" => :catalina
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}
