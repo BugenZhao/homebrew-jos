@@ -5,6 +5,11 @@ class X8664LitchiElfGcc < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-10.1.0/gcc-10.1.0.tar.xz"
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-10.1.0/gcc-10.1.0.tar.xz"
   sha256 "b6898a23844b656f1b68691c5c012036c2e694ac4b53a8918d4712ad876e7ea2"
+  bottle do
+    root_url "https://dl.bintray.com/bugenzhao/bottles-litchi"
+    sha256 "10b9d821e5188649fe19dc8c281b1aba4e7b8296b5e64a1bcb25ae9584dd91d0" => :catalina
+  end
+
   conflicts_with "i386-litchi-elf-gcc"
 
   depends_on "gmp"
