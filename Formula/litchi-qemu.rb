@@ -1,8 +1,8 @@
-class I386LitchiElfQemu < Formula
+class LitchiQemu < Formula
 
-  desc "x86 and PowerPC Emulator"
+  desc "Litchi Emulator"
   homepage "http://wiki.qemu.org"
-  head "https://github.com/mit-pdos/6.828-qemu.git", :branch => "master"
+  url "https://github.com/mit-pdos/6.828-qemu.git", :using => :git, :tag => "2.3.0"
   conflicts_with "qemu"
 
   depends_on "pkg-config" => :build
@@ -20,7 +20,7 @@ class I386LitchiElfQemu < Formula
     ENV["LIBTOOL"] = "glibtool"
 
     args = %W[
-      --target-list=i386-softmmu
+      --target-list=i386-softmmu,x86_64-softmmu
       --prefix=#{prefix}
       --cc=#{ENV.cc}
       --host-cc=#{ENV.cc}
