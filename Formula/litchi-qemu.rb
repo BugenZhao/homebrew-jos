@@ -3,6 +3,11 @@ class LitchiQemu < Formula
   desc "Litchi Emulator"
   homepage "http://wiki.qemu.org"
   url "https://github.com/mit-pdos/6.828-qemu.git", :using => :git, :tag => "2.3.0"
+  bottle do
+    root_url "https://dl.bintray.com/bugenzhao/bottles-litchi"
+    sha256 "96273ec7ad270c202bf99608c265d3ef18d2cf5dadfd0cfd2b565feeeacb23ae" => :catalina
+  end
+
   conflicts_with "qemu"
 
   depends_on "pkg-config" => :build
