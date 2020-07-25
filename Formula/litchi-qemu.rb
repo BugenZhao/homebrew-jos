@@ -16,6 +16,9 @@ class LitchiQemu < Formula
   depends_on "gnutls"
   depends_on "glib"
   depends_on "pixman"
+  depends_on "lzo"
+  depends_on "ncurses"
+  depends_on "snappy"
   depends_on "vde" => :optional
   depends_on "sdl" => :optional
   depends_on "gtk+" => :optional
