@@ -1,4 +1,4 @@
-# homebrew-litchi
+# homebrew-litchi ![Install](https://github.com/BugenZhao/homebrew-litchi/workflows/Install/badge.svg)
 
 Homebrew formulae of [Litchi](https://github.com/BugenZhao/Litchi) cross-compile toolchains.
 
