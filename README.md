@@ -3,7 +3,7 @@
 Homebrew formulae of [Litchi](https://github.com/BugenZhao/Litchi) cross-compile toolchains.
 
 - `i386-litchi-elf-gcc`: gcc, g++ with newlib libstdc++
-- `i386-litchi-elf-qemu`: ported from JOS, patched to dump registers when fault occurs
+- `litchi-qemu`: ported from JOS, patched to dump registers when fault occurs
 
 Bottles for macOS Catalina are provided. For other platform like old macOS or Linux, toolchains are built from sources.
 
@@ -11,8 +11,7 @@ Bottles for macOS Catalina are provided. For other platform like old macOS or Li
 
 ```bash
 $ brew tap bugenzhao/litchi
-$ brew install --HEAD i386-litchi-elf-qemu
-$ brew install i386-litchi-elf-binutils i386-litchi-elf-gcc i386-litchi-elf-gdb
+$ brew install i386-litchi-elf-binutils i386-litchi-elf-gcc i386-litchi-elf-gdb litchi-qemu
 ```
 
 ## Notes on Maintain Bottles
