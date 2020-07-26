@@ -1,0 +1,25 @@
+name: Install
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Brew Tap
+      run: brew tap bugenzhao/litchi
+    - name: Install binutils
+      run: brew install i386-litchi-elf-binutils
+    - name: Install gcc, g++, libstdc++
+      run: brew install i386-litchi-elf-gcc
+    - name: Install gdb
+      run: brew install i386-litchi-elf-gdb
+    - name: Install qemu
+      run: brew install litchi-qemu
+    - name: Run g++
+      run: i386-litchi-elf-g++ -v

@@ -14,7 +14,7 @@ $ brew tap bugenzhao/litchi
 $ brew install i386-litchi-elf-binutils i386-litchi-elf-gcc i386-litchi-elf-gdb litchi-qemu
 ```
 
-## Notes on Maintain Bottles
+## Notes on Maintaining Bottles
 
 - Create a Bintray repo named "bottles-litchi"
 - Create several packages under it, named the same as the formulae, e.g. "i386-litchi-elf-gcc"
